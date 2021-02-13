@@ -2,6 +2,11 @@ name: Simple Workflow
 
 on:
     workflow_dispatch:
+      inputs:
+        text:
+          description: 'Input text to generate artifact'
+          required: false
+          default: 'null'
 
 jobs:
 
