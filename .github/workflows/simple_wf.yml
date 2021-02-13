@@ -24,7 +24,7 @@ jobs:
           uses: "finnp/create-file-action@master"
           env:
             FILE_NAME: "/home/runner/work/devops-school/devops-school/output.txt"
-            FILE_DATA: ${{  inputs.text  }}
+            FILE_DATA: ${{  github.event.inputs.text  }}
         - name: 1.4.1 DOWNLOAD ARTIFACT
           uses: actions/upload-artifact@v2
           with:
