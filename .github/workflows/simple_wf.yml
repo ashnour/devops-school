@@ -20,16 +20,17 @@ jobs:
             cp ./scripts/main.py ./.github/actions/action_1.2/main.py
         - name: 1.2 EXECUTING THE PYTHON SCRIPT
           uses: ./.github/actions/action_1.2
-        - uses: "finnp/create-file-action@master"
-            env:
-              FILE_NAME: "/home/runner/work/devops-school/devops-school/output.txt"
-              FILE_DATA: INPUT_TEXT
-        - name: 1.3 DOWNLOAD ARTIFACT
+        - name: 1.3 CREATE OUTPUT FILE
+          uses: "finnp/create-file-action@master"
+          env:
+            FILE_NAME: "/home/runner/work/devops-school/devops-school/output.txt"
+            FILE_DATA: INPUT_TEXT
+        - name: 1.4.1 DOWNLOAD ARTIFACT
           uses: actions/upload-artifact@v2
           with:
               name: log.md
               path: /home/runner/work/devops-school/devops-school/log.md
-        - name: 1.3.1 DOWNLOAD ARTIFACT
+        - name: 1.4.2 DOWNLOAD ARTIFACT
           uses: actions/upload-artifact@v2
           with:
               name: output.txt
