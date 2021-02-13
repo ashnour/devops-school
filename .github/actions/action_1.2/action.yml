@@ -1,5 +1,11 @@
 name: 'Test'
 
+inputs:
+    text:
+        description: 'Input text to generate artifact'
+        required: false
+        default: 'null'
+
 runs:
     using: 'docker'
     image: 'Dockerfile'
