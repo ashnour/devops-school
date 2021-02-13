@@ -20,7 +20,7 @@ jobs:
           uses: nanzm/get-time-action@v1.1
           with:
             timeZone: 3
-            format: 'YYYY-MM-DD-HH-mm-ss'
+            format: 'YYYY-MM-DD HH:mm:ss'
         - name: 1.1 UPLOADING FILES
           run: |
             cp ./scripts/main.py ./.github/actions/action_1.2/main.py
