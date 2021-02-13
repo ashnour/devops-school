@@ -15,6 +15,12 @@ jobs:
 
         steps:
         - uses: actions/checkout@v2
+        - name: 1.0 GET TIMESTAMP
+          id: time
+          uses: nanzm/get-time-action@v1.1
+          with:
+            timeZone: 3
+            format: 'YYYY-MM-DD-HH-mm-ss'
         - name: 1.1 UPLOADING FILES
           run: |
             cp ./scripts/main.py ./.github/actions/action_1.2/main.py
@@ -24,7 +30,7 @@ jobs:
           uses: "finnp/create-file-action@master"
           env:
             FILE_NAME: "/home/runner/work/devops-school/devops-school/output.txt"
-            FILE_DATA: ${{ steps.date.outputs.date }} ${{  github.event.inputs.text  }}
+            FILE_DATA: ${{ steps.time.outputs.time }} ${{  github.event.inputs.text  }}
         - name: 1.4.1 DOWNLOAD ARTIFACT
           uses: actions/upload-artifact@v2
           with:
